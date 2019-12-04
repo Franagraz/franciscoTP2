@@ -1,0 +1,63 @@
+@layout('layouts.appEmpleado')
+@section('content')
+
+
+
+        <div class="container" id="contenedor">
+            <div class="row justify-content-center formulario" id="row">
+                <div class="col-lg-12 col-lg-offset-7">
+                    <h1 class="form-title">Producto</h1>
+                </div>
+                <div class="col-lg-12 col-lg-offset-7">
+    
+                    <form id="formularioReg" action="/editar/{{producto.Nombre}}" method="POST" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
+                        <div id="formu">
+    
+                            
+                            <div class="form-group nombre">
+                                <label for="Nombre">Nombre</label>
+                                <input class="form-control" value="{{producto.Nombre}}" type="text" name="Nombre" id="Nombre" required>
+                            </div>
+    
+                            
+                            <div class="form-group Precio">
+                                <label for="Precio">Precio</label>
+                                <input class="form-control" value="{{producto.Precio}}" type="number" name="Precio" id="Precio" required>
+                            </div>
+    
+                            
+                            <div class="form-group Descripcion">
+                                <label for="Descripcion">Descripción</label>
+                                <input class="form-control" value="{{producto.Descripcion}}" type="text" name="Descripcion" id="Descripcion" required>
+                            </div>
+    
+                            <div class="form-group Categoria">
+                                    <label for="Categoria">Categoria</label>
+                                    <select id="Categoria" name="Categoria" required>
+                                            <option>{{producto.Categoria}}</option>
+                                            <option>{{opcion2}}</option>
+                                            <option>{{opcion3}}</option>
+                                    </select>
+                                </div>
+    
+                            <div class="form-group Calorias">
+                                <label for="Calorias">Calorias</label>
+                                <input class="form-control" value="{{producto.Calorias}}" type="number" name="Calorias" id="Calorias" required>
+                            </div>
+    
+                        </div>
+                   
+                        <div>
+                            <td><button class="btn btn-success" type="submit">Guardar</button></td>
+                            <td><a href="/productos" class="btn btn-primary" >Volver atrás</a></td>
+                        </div>
+                    </form>
+    
+                </div>
+    
+            </div>
+    
+        </div>
+    
+    </body>
+    @endsection

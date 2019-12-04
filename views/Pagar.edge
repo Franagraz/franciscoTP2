@@ -1,0 +1,116 @@
+@layout('layouts.appCliente')
+
+@section('content')
+
+<!--PRODUCTO ELEGIDO-->
+<h2>Pagar Pedido</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            
+          
+            <th style="width:100px;">Nombre Producto</th>
+            <th style="width:100px;">Descripción</th>
+            <th style="width:100px;">Precio</th>
+            <th style="width:100px;">Categoría</th>
+            <th style="width:100px;">Calorias</th>
+        </tr>
+    </thead>
+    <tbody>
+            @each(p in listPedidos)
+                    <tr>
+                        <td>{{p.Nombre}}</td>
+                        <td>{{p.Descripcion}}</td>
+                        <td>{{p.Precio}}</td>
+                        <td>{{p.Categoria}}</td>
+                        <td>{{p.Calorias}}</td>
+                    </tr>
+            @endeach
+    </tbody>
+
+</table>
+<div class="row" align="center">
+    <div class="col-lg-4">
+        <h2>Cantidad de productos:</h2>
+        <h3>{{listPedidos.length}}</h3>
+    </div>
+    <div class="col-lg-4">
+        <h2>Total a pagar:</h2>
+        <h3 name="total" id="total">${{totalPagar}}</h3>
+    </div>
+    <div class="col-lg-4">
+        <h2>Interés:</h2>
+        <h3 name="total" id="total">${{interes}}</h3>
+    </div>
+    <div class="col-lg-4">
+        <h2>Calorias totales:</h2>
+        <h3>{{caloriasTotales}} Kcal</h3>
+    </div>
+</div>
+
+
+<!--PAGAR PRODUCTO-->
+<div class="container" id="contenedor">
+    <div class="row justify-content-center formulario" id="row">
+        <div class="col-lg-12 col-lg-offset-7">
+            <h1 class="form-title">Pagar Pedido</h1>
+        </div>
+        <div class="col-lg-12 col-lg-offset-7">
+
+            <form action="/Pagar/{{totalPagar}}" method="POST" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
+                <div id="formu">
+
+                    <!-- Nombre -->
+                    <div class="form-group nombre">
+                        <label for="nombre">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="nombre" required>
+                    </div>
+                    <!-- Apellido -->
+                    <div class="form-group apellido">
+                        <label for="apellido">Apellido</label>
+                        <input class="form-control" type="text" name="apellido" id="apellido" required>
+                    </div>
+
+                    <!--DNI-->
+                    <div class="form-group DNI">
+                        <label for="DNI">DNI</label>
+                        <input class="form-control" type="number" name="DNI" id="DNI" style="Width:160px" maxlength="9" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                    </div>
+
+                    <!--Tarjeta de crédito-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-3">
+                                <div class="form-group">
+                                    <label for="">Nro. Tarjeta</label>
+                                    <div class="input-group">
+                                        <input class="form-control" style="Width:80px" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="nro1" id="nro1" required>
+                                        <span class="input-group-addon">-</span>
+                                        <input class="form-control" style="Width:80px" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="nro2" id="nro2" required>
+                                        <span class="input-group-addon">-</span>
+                                        <input class="form-control" style="Width:80px" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="nro3" id="nro3" required>
+                                        <span class="input-group-addon">-</span>
+                                        <input class="form-control" style="Width:80px" maxlength="4" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" type="number" name="nro4" id="nro4" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Codigo de seguridad-->
+                <div class="form-group seguridad">
+                    <label for="seguridad">Codigo de seguridad</label>
+                    <input class="form-control" type="password" name="seguridad" id="seguridad" style="Width:80px" maxlength="3" oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" required>
+                </div>
+                <button class="btn btn-primary">Pagar</button>
+                
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+@endsection

@@ -1,0 +1,50 @@
+@layout('layouts.appEmpleado')
+
+@section('content')
+
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Informe de productos vendidos durante el día</h2>
+
+    <table class="table table-striped">
+        <tr>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Desc. Producto</th>
+            <th>Categoria</th>
+            <th>Calorias</th>
+            <th>Fecha</th>
+
+        </tr>
+            @each(list in lista) 
+            
+                        <tr>
+                            <td>{{list.Nombre}}</td>
+                            <td>{{list.Precio}}</td>
+                            <td>{{list.Descripcion}}</td>
+                            <td>{{list.Categoria}}</td>
+                            <td>{{list.Calorias}}</td>
+                            <td>{{list.Fecha}}</td>
+                            <td></td>
+                        </tr>
+                        
+            @endeach
+            
+        <tr>
+            <th>Ganancia del día</th>
+        </tr>
+        <tr>
+            <td>${{ganancia}}</td>
+        </tr>
+        
+    </table>
+
+</body>
+</html>
+
+@endsection
+
+
+    

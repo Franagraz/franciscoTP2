@@ -1,0 +1,32 @@
+{
+  "name": "tallerp2c08",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablofernandezhinojosa/ORT_TallerProgramacion2.git"
+  },
+  "author": "Pablo Fernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pablofernandezhinojosa/ORT_TallerProgramacion2/issues"
+  },
+  "homepage": "https://github.com/pablofernandezhinojosa/ORT_TallerProgramacion2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "express": "^4.17.1",
+    "express-edge": "^2.0.1",
+    "lodash": "^4.17.15",
+    "mongodb": "^3.3.3",
+    "mongoose": "^5.7.13",
+    "nodemon": "^2.0.1",
+    "request": "^2.88.0",
+    "request-promise-native": "^1.0.7"
+  },
+  "devDependencies": {}
+}

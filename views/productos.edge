@@ -1,0 +1,61 @@
+@layout('layouts.appEmpleado')
+    
+@section('content')
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:100px;">Nombre</th>
+            <th style="width:100px;">Precio</th>
+            <th style="width:100px;">Descripción</th>
+            <th style="width:100px;">Categoría</th>
+            <th style="width:100px;">Calorias</th>
+            <th style="width:100px;">Fecha</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <form action="/productos/guardar" method="POST" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
+                
+                <td> <input name="Nombre" id="Nombre" required /> </td>
+                <td> <input name="Precio" id="Precio" type="number" required /> </td>
+                <td> <input name="Descripcion" id="Descripcion" required /> </td>
+                <td>
+                    <select id="Categoria" name="Categoria" required>
+                        <option></option>
+                        <option>Hamburguesa</option>
+                        <option>Papas</option>
+                        <option>Gaseosa</option>
+                    </select>
+                </td>
+                <td> <input name="Calorias" id="Calorias" type="number" required /> </td>                
+                <td> <div name="Fecha" id="Fecha">{{hoy}}</div></td>
+                <td> <button type="submit" name="agregar" id="agregar" class="btn btn-success">Agregar</button> </td>
+                
+            </form>
+        @each(producto in result) 
+            
+                        <tr>
+                            <td>{{producto.Nombre}}</td>
+                            <td>{{producto.Precio}}</td>
+                            <td>{{producto.Descripcion}}</td>
+                            <td>{{producto.Categoria}}</td>
+                            <td>{{producto.Calorias}}</td>
+                            <td>{{producto.Fecha}}</td>
+                            <td>
+                            <a href="/editar/{{producto.Nombre}}" class="btn btn-primary" >Editar</a>
+                            <a href="/eliminar/{{producto.Nombre}}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        
+                @endeach
+        </tr>
+           
+    </tbody>
+</table>
+</body>
+
+@endsection
+
+
+    

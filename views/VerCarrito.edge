@@ -1,0 +1,39 @@
+@layout('layouts.appCliente')
+    
+@section('content')
+
+<h1>Carrito</h1>
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th style="width:100px;">Nombre Producto</th>
+                <th style="width:100px;">Descripción</th>
+                <th style="width:100px;">Precio</th>
+                <th style="width:100px;">Categoría</th>
+                <th style="width:100px;">Calorias</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+                    @each(pedido in listPedidos)
+                        
+                        <tr>
+                            <td>{{pedido.Nombre}}</td>
+                            <td>{{pedido.Descripcion}}</td>
+                            <td>{{pedido.Precio}}</td>
+                            <td>{{pedido.Categoria}}</td>
+                            <td>{{pedido.Calorias}}</td>
+                            <td style="width:30px"><a href="/eliminarDeCarrito/{{pedido.Nombre}}" class="btn btn-danger" >Eliminar</a></td>
+                        </tr>
+                        
+                    @endeach
+        </tbody>
+    </table>
+    <button  href="/Pagar" class="btn btn-primary">Pagar</button>
+
+
+
+
+@endsection
