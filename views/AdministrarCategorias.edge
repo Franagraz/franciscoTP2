@@ -1,0 +1,38 @@
+@layout('layouts.appEmpleado')
+    
+@section('content')
+<h2>Administrar Categorias</h2>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th style="width:100px;">Nombre</th>
+            <th style="width:100px;">Acción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <form action="/AdministrarCategorias/:{{Categoria}}" method="POST" onKeypress="if(event.keyCode == 13) event.returnValue = false;">
+                
+                <td> <input name="Categoria" id="Categoria" type="text" required /> </td>
+                <td> <button type="submit" name="agregar" id="agregar" class="btn btn-success">Agregar</button> </td>
+            </form>
+        @each(c in cat) 
+            
+                        <tr>
+                            <td>{{c.Categoria}}</td>
+                            <td>
+                            <a href="/eliminarCat/{{c.Categoria}}" class="btn btn-danger">Eliminar</a>
+                            </td>
+                        </tr>
+                        
+                @endeach
+        </tr>
+           
+    </tbody>
+</table>
+</body>
+
+@endsection
+
+
+    

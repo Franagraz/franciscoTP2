@@ -18,42 +18,19 @@
         </thead>
         <tbody>
             <tr>
-            @each(h in listHamburguesas) 
+            @each(p in prod) 
                 
-                            <tr>
-                                <td>{{h.Nombre}}</td>
-                                <td>${{h.Precio}}</td>
-                                <td>{{h.Descripcion}}</td>
-                                <td>{{h.Categoria}}</td>
-                                <td>{{h.Calorias}}</td>
-                                <td><a href="/AgregarCarrito/{{h.Nombre}}" class="btn btn-primary" >Agregar a Carrito</a></td>
-                            </tr>
-                            
-                    @endeach
-                    @each(p in listPapas) 
-                
+                    
                             <tr>
                                 <td>{{p.Nombre}}</td>
-                                <td>{{p.Precio}}</td>
+                                <td>${{p.Precio}}</td>
                                 <td>{{p.Descripcion}}</td>
                                 <td>{{p.Categoria}}</td>
                                 <td>{{p.Calorias}}</td>
                                 <td><a href="/AgregarCarrito/{{p.Nombre}}" class="btn btn-primary" >Agregar a Carrito</a></td>
-                                
                             </tr>
                             
-                    @endeach
-                    @each(g in listGaseosas) 
-                
-                            <tr>
-                                <td>{{g.Nombre}}</td>
-                                <td>{{g.Precio}}</td>
-                                <td>{{g.Descripcion}}</td>
-                                <td>{{g.Categoria}}</td>
-                                <td>{{g.Calorias}}</td>
-                                <td><a href="/AgregarCarrito/{{g.Nombre}}" class="btn btn-primary" >Agregar a Carrito</a></td>
-                            </tr>
-                            
+                          
                     @endeach
             </tr>
                

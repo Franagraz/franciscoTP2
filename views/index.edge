@@ -1,16 +1,49 @@
+@layout('layouts.navBar')
+@section('content')
 
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
+<div align="center" class="jumbotron">
+    <h1>Jordaz Burguers</h1>
+    <p class="lead">Las mejores y más picantes hamburguesas de la zona.</p>
 
-<body>
-    <h2>Podes acceder como Cliente o como usuario</h2>
+
+    <h2 class="titulo-info">¿Por qué jordaz?</h2>
+
+    <div class="row informacion">
+        
+        
+        <div class="col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">Mejor atención &#9201</div>
+                <div class="panel-body">
+                    Nuestros pedidos siempre son retirados inmediatamente después de haber sido
+                    pedidos por nuestros clientes.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Productos más frescos &#128166</div>
+                <div class="panel-body">Los mejores ingredientes seleccionados minusiosamente por nuestros profesionales.</div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="panel panel-success">
+                <div class="panel-heading">Eco-friendly &#128260</div>
+                <div class="panel-body">Todos nuestros residuos son generados con materiales biodegradables.</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div align="center">
+<div class="panel-body">Acceder como:</div>
     <form action="/indexEmpleado" method="POST">
         <button type="submit" name="Empleado" id="Empleado" class="btn btn-primary">Empleado</button>
     </form>
+<div class="panel-body">o como..</div>
     <form action="/indexCliente" method="POST">
         <button type="submit" name="Cliente" id="Cliente" class="btn btn-primary">Cliente</button>
     </form>
-    
-    
+</div>
 </body>
+@endsection
+

@@ -1,0 +1,43 @@
+@layout('layouts.navbar')
+@section('content')
+
+<div class="container">
+        <h1 align="center"><b>Nuestros productos</b></h1>
+    
+        <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="width:100px;">Nombre</th>
+                        <th style="width:100px;">Precio</th>
+                        <th style="width:100px;">Descripción</th>
+                        <th style="width:100px;">Categoría</th>
+                        <th style="width:100px;">Calorias</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    @each(producto in result) 
+                        
+                                    <tr>
+                                        <td>{{producto.Nombre}}</td>
+                                        <td>{{producto.Precio}}</td>
+                                        <td>{{producto.Descripcion}}</td>
+                                        <td>{{producto.Categoria}}</td>
+                                        <td>{{producto.Calorias}}</td>
+                                        <td>
+                                        </td>
+                                    </tr>
+                                    
+                            @endeach
+                    </tr>
+                       
+                </tbody>
+            </table>
+            </body>
+        
+    </div>
+ 
+@endsection
+
+
+    

@@ -9,10 +9,8 @@
         <thead>
             <tr>
                 <th style="width:100px;">Nombre Producto</th>
-                <th style="width:100px;">Descripción</th>
                 <th style="width:100px;">Precio</th>
-                <th style="width:100px;">Categoría</th>
-                <th style="width:100px;">Calorias</th>
+                <th style="width:100px;">Fecha</th>
                 <th></th>
             </tr>
         </thead>
@@ -21,17 +19,15 @@
                         
                         <tr>
                             <td>{{pedido.Nombre}}</td>
-                            <td>{{pedido.Descripcion}}</td>
                             <td>{{pedido.Precio}}</td>
-                            <td>{{pedido.Categoria}}</td>
-                            <td>{{pedido.Calorias}}</td>
-                            <td style="width:30px"><a href="/eliminarDeCarrito/{{pedido.Nombre}}" class="btn btn-danger" >Eliminar</a></td>
+                            <td>{{pedido.Fecha}}</td>
+                            <td style="width:30px"><a href="/eliminarDeCarrito/{{pedido._id}}" class="btn btn-danger" >Eliminar</a></td>
                         </tr>
                         
                     @endeach
         </tbody>
     </table>
-    <button  href="/Pagar" class="btn btn-primary">Pagar</button>
+    <button style="width:30px"><a href="/Pagar" class="btn btn-primary">Pagar</a></button>
 
 
 

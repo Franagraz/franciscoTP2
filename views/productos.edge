@@ -1,7 +1,7 @@
 @layout('layouts.appEmpleado')
     
 @section('content')
-
+<h2>Administrar Productos</h2>
 <table class="table table-striped">
     <thead>
         <tr>
@@ -23,13 +23,13 @@
                 <td>
                     <select id="Categoria" name="Categoria" required>
                         <option></option>
-                        <option>Hamburguesa</option>
-                        <option>Papas</option>
-                        <option>Gaseosa</option>
+                        @each(c in result2)
+                        <option>{{c.Categoria}}</option>
+                        @endeach
                     </select>
                 </td>
                 <td> <input name="Calorias" id="Calorias" type="number" required /> </td>                
-                <td> <div name="Fecha" id="Fecha">{{hoy}}</div></td>
+                <td> {{fecha}}</td>
                 <td> <button type="submit" name="agregar" id="agregar" class="btn btn-success">Agregar</button> </td>
                 
             </form>

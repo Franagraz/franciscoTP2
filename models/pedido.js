@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const pedidoSchema = new mongoose.Schema({
-    _id: {type: Object},
-    idProducto: {type: Object},
+    _id: {type: Number},
+    idProducto: {type: Number},
     Nombre: {type: String, required: true},
     Precio: {type: Number},
     SnPagado: {type: String, required: true},

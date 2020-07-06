@@ -2,9 +2,11 @@
   "name": "tallerp2c08",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./routes/index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon index.js",
+    "lint": "eslint.js",
+    "stop": "pkill --signal SIGINT myApp"
   },
   "repository": {
     "type": "git",

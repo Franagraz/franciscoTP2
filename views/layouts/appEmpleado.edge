@@ -4,20 +4,33 @@
 <body>
     <!-- Grey with black text -->
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-    <ul class="navbar-nav">
+
+  <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+    <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-                    <a class="nav-link">Empleado</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/">Home</a>
-                  </li>    
-            <li class="nav-item">
-                    <a class="nav-link" href="/productos">Administrar Productos</a>
-                  </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/informeProductos">Informe de productos vendidos durante el día</a>
-      </li>
-    </ul>
+          <a class="nav-link">Empleado</a>
+        </li>   
+        <li class="nav-item">
+          <a class="nav-link" href="/productos">Administrar Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/AdministrarCategorias">Administrar Categorias</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/informeProductos">Informe de productos vendidos durante el día</a>
+        </li>
+      </ul>
+
+   </div>
+
+      <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Salir</a>
+        </li> 
+      </ul>
+      </div>
+
   </nav>
 
   @!section('content')

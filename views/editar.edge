@@ -21,7 +21,7 @@
     
                             
                             <div class="form-group Precio">
-                                <label for="Precio">Precioo</label>
+                                <label for="Precio">Precio</label>
                                 <input class="form-control" value="{{producto.Precio}}" type="number" name="Precio" id="Precio" required>
                             </div>
     
@@ -30,16 +30,19 @@
                                 <label for="Descripcion">Descripción</label>
                                 <input class="form-control" value="{{producto.Descripcion}}" type="text" name="Descripcion" id="Descripcion" required>
                             </div>
-    
+                            
                             <div class="form-group Categoria">
                                     <label for="Categoria">Categoria</label>
                                     <select id="Categoria" name="Categoria" required>
                                             <option>{{producto.Categoria}}</option>
-                                            <option>{{opcion2}}</option>
-                                            <option>{{opcion3}}</option>
+                                            @each(c in categorias)
+                                            @if(c.Categoria!=producto.Categoria)
+                                            <option>{{c.Categoria}}</option>
+                                            @endif
+                                            @endeach
                                     </select>
                                 </div>
-    
+                           
                             <div class="form-group Calorias">
                                 <label for="Calorias">Calorias</label>
                                 <input class="form-control" value="{{producto.Calorias}}" type="number" name="Calorias" id="Calorias" required>
@@ -48,7 +51,7 @@
                         </div>
                    
                         <div>
-                            <td><button class="btn btn-success" type="submit">Guardar</button></td>
+                            <td><button href="/productos" class="btn btn-success" type="submit">Guardar</button></td>
                             <td><a href="/productos" class="btn btn-primary" >Volver atrás</a></td>
                         </div>
                     </form>
